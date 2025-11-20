@@ -10,7 +10,7 @@
     padding: 50px 30px;
     border-radius: 24px;
     color: white;
-    text-align: center; /* <--- Ini penyebab teks kamu ketarik ke tengah */
+    text-align: center; 
     max-width: 700px;
     margin: 0 auto;
     box-shadow: 0 20px 40px rgba(37, 99, 235, 0.3);
@@ -99,15 +99,14 @@
     margin: 0 auto;
 }
 
-/* === INI BAGIAN YANG KU-FIX DI KODE KAMU === */
 .social-card {
     display: flex;
     align-items: center;
-    gap: 15px; /* Tetap pakai 15px sesuai aslimu */
+    gap: 15px; 
     
     /* TAMBAHAN PENTING: */
-    justify-content: flex-start; /* Paksa isi mulai dari kiri */
-    text-align: left;            /* Lawan text-align: center dari parent */
+    justify-content: flex-start; 
+    text-align: left;            
     /* ---------------- */
 
     padding: 18px 22px;
@@ -140,8 +139,8 @@
 .social-card:hover {
     background: rgba(255, 255, 255, 0.15);
     border-color: rgba(255, 255, 255, 0.4);
-    transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 }
 
 .social-icon {
@@ -193,26 +192,59 @@
     box-shadow: 0 0 20px rgba(51, 51, 51, 0.4);
 }
 
+/* Platform-specific hover effects - sama seperti hero social */
+.social-card[href*="linkedin"]:hover {
+    background: rgba(10, 102, 194, 0.1);
+    border-color: #0A66C2;
+}
+
 .social-card[href*="linkedin"]:hover .social-icon {
     background: #0A66C2;
     color: white;
     box-shadow: 0 0 20px rgba(10, 102, 194, 0.4);
+    transform: translateY(-2px) scale(1.1);
+}
+
+.social-card[href*="instagram"]:hover {
+    background: rgba(240, 148, 51, 0.1);
+    border-color: #E6683C;
 }
 
 .social-card[href*="instagram"]:hover .social-icon {
-    background: linear-gradient(45deg, #F09433, #E6683C, #DC2743, #CC2366, #BC1888);
+    background: linear-gradient(45deg, #F09433, #E6683C, #DC2743);
     color: white;
     box-shadow: 0 0 20px rgba(220, 39, 67, 0.4);
+    transform: translateY(-2px) scale(1.1);
+}
+
+.social-card[href*="github"]:hover {
+    background: rgba(51, 51, 51, 0.1);
+    border-color: #333;
+}
+
+.social-card[href*="github"]:hover .social-icon {
+    background: #333;
+    color: white;
+    box-shadow: 0 0 20px rgba(51, 51, 51, 0.4);
+    transform: translateY(-2px) scale(1.1);
+}
+
+.social-card[href*="wa.me"]:hover {
+    background: rgba(37, 211, 102, 0.1);
+    border-color: #25D366;
 }
 
 .social-card[href*="wa.me"]:hover .social-icon {
     background: #25D366;
     color: white;
     box-shadow: 0 0 20px rgba(37, 211, 102, 0.4);
+    transform: translateY(-2px) scale(1.1);
 }
 
 .social-card[href*="linkedin"]:hover .s-name { color: #e3f2fd; }
 .social-card[href*="instagram"]:hover .s-name { color: #fce4ec; }
+.social-card[href*="github"]:hover .s-name { color: #f5f5f5; }
+.social-card[href*="wa.me"]:hover .s-name { color: #e8f5e8; }
 
 /* ==========================================
    SUCCESS POPUP MODAL
