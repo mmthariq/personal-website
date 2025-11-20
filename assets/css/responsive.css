@@ -1,0 +1,146 @@
+/* =========================================
+   RESPONSIVE DESIGN
+   ========================================= */
+
+/* TABLET */
+@media (max-width: 1024px) {
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+    
+    .skill-card {
+        padding: 30px 25px;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    /* HERO */
+    .hero-container {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding-top: 50px;
+    }
+    
+    .hero-text h1 { font-size: 2.5rem; }
+    .social-icons { justify-content: center; }
+    
+    /* NAVIGATION */
+    .nav-links { 
+        display: none;
+        position: fixed;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 80px);
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 50px;
+        gap: 30px;
+        z-index: 999;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+    
+    .nav-links.nav-active {
+        display: flex;
+        transform: translateX(0);
+    }
+    
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .nav-links a {
+        font-size: 1.2rem;
+        padding: 15px 0;
+        display: block;
+        width: 100%;
+    }
+    
+    .nav-social-link {
+        font-size: 1.1rem;
+    }
+    
+    .menu-toggle { display: flex; }
+    
+    /* SKILLS */
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    .skill-card {
+        padding: 25px 20px;
+    }
+    
+    .skill-tags {
+        gap: 6px;
+        margin: 12px 0 15px 0;
+    }
+    
+    .tag {
+        font-size: 0.75rem;
+        padding: 3px 10px;
+    }
+    
+    /* CONTACT */
+    .contact-card { padding: 30px 20px; }
+    
+    /* SOCIAL MEDIA */
+    .social-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        max-width: 100%;
+    }
+    
+    .social-card {
+        padding: 15px 18px;
+        gap: 12px;
+    }
+    
+    .social-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 1.6rem;
+    }
+    
+    .s-name {
+        font-size: 1rem;
+    }
+    
+    .s-desc {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    /* SOCIAL MEDIA - Extra Small Screens */
+    .social-grid {
+        gap: 12px;
+    }
+    
+    .social-card {
+        padding: 12px 15px;
+        gap: 10px;
+    }
+    
+    .social-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.4rem;
+    }
+    
+    .s-name {
+        font-size: 0.95rem;
+    }
+    
+    .s-desc {
+        font-size: 0.75rem;
+    }
+}

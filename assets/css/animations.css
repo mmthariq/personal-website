@@ -1,0 +1,47 @@
+/* =========================================
+   ANIMATIONS & UTILITIES
+   ========================================= */
+
+/* ANIMATIONS */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.reveal.active { 
+    opacity: 1; 
+    transform: translateY(0); 
+}
+
+.delay-100 { transition-delay: 0.1s; }
+.delay-200 { transition-delay: 0.2s; }
+.delay-300 { transition-delay: 0.3s; }
+
+.social-card {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.social-card:nth-child(1) { animation-delay: 0.1s; }
+.social-card:nth-child(2) { animation-delay: 0.2s; }
+.social-card:nth-child(3) { animation-delay: 0.3s; }
+.social-card:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* FOOTER */
+footer {
+    background: var(--text-main);
+    color: white;
+    text-align: center;
+    padding: 30px 0;
+}

@@ -1,0 +1,124 @@
+/* =========================================
+   COMPONENTS - Navbar, Buttons, Cards
+   ========================================= */
+
+/* NAVBAR */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.nav-container {
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+.logo span { color: var(--primary); }
+
+.nav-links { 
+    display: flex; 
+    gap: 40px; 
+    align-items: center; 
+}
+
+.nav-links a {
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: 0.3s;
+    color: var(--text-main);
+}
+
+.nav-links a:hover { color: var(--primary); }
+
+.nav-social-link {
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: 0.3s;
+    color: var(--text-main);
+}
+
+.nav-social-link:hover {
+    color: var(--primary);
+}
+
+.btn-nav {
+    padding: 10px 24px;
+    background: var(--primary);
+    color: white !important;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+    transition: 0.3s;
+}
+
+.btn-nav:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+.menu-toggle { 
+    display: none; 
+    font-size: 1.5rem; 
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.menu-toggle:hover {
+    background: rgba(59, 130, 246, 0.1);
+    color: var(--primary);
+}
+
+/* CARDS */
+.project-card, .skill-card {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: 0.3s;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.project-card:hover, .skill-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+/* BADGES */
+.badge {
+    display: inline-block;
+    padding: 6px 16px;
+    background: #DBEAFE;
+    color: var(--primary-dark);
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 30px;
+    margin-bottom: 20px;
+}
+
+.location-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #EFF6FF;
+    color: var(--primary);
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-top: 25px;
+}
