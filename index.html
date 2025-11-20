@@ -3,22 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio Saya | Developer</title>
+    <title>ThariqSpace - Personal Web</title>
     
+    <!-- Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
     
+    <!-- CSS Utama -->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
+    <!-- NAVBAR -->
     <header id="navbar">
         <nav class="container nav-container">
-            <a href="#" class="logo">Dev<span>Blue</span>.</a>
+            <a href="#" class="logo">Thariq<span>Space</span></a>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact" class="btn-nav">Contact Me</a></li>
             </ul>
             <div class="menu-toggle"><i class="ri-menu-3-line"></i></div>
@@ -26,28 +31,50 @@
     </header>
 
     <main>
+        <!-- HERO SECTION -->
         <section id="home" class="hero">
             <div class="container hero-container">
                 <div class="hero-text reveal">
-                    <span class="badge">👋 Halo, aku Thariq</span>
-                   <h1>I create <span style="color: #3B82F6;">Web Solutions</span></h1>
+                    <span class="badge">👋 Halo, saya Thariq</span>
+                    <h1>I create <span class="text-highlight">Web Solutions</span></h1>
                     <p>Membangun solusi digital yang minimalis, cepat, dan fungsional menggunakan teknologi modern.</p>
                     
                     <div class="social-icons">
-                        <a href="#"><i class="ri-github-fill"></i></a>
-                        <a href="#"><i class="ri-linkedin-fill"></i></a>
-                        <a href="https:/instagram.com/mthariiqh"><i class="ri-instagram-line"></i></a>
+                        <a href="https://linkedin.com/in/muhammad-thariq-haqkimi" target="_blank" title="LinkedIn"><i class="ri-linkedin-fill"></i></a>
+                        <a href="https://instagram.com/mthariiqh" target="_blank" title="Instagram"><i class="ri-instagram-line"></i></a>
+                        <a href="https://github.com/mmthariq" target="_blank" title="GitHub"><i class="ri-github-fill"></i></a>
                     </div>
                 </div>
 
                 <div class="hero-image reveal delay-200">
                     <div class="img-wrapper" id="profileWrapper">
-                        <img src="assets/img/profile.png" alt="Profile Picture">
+                        <img src="assets/img/profile.png" alt="Profile Picture" onerror="this.src='https://via.placeholder.com/300'">
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- ABOUT SECTION -->
+        <section id="about" class="about-section reveal">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Tentang saya</h2>
+                </div>
+                <div class="about-content">
+                    <p style="text-align: center; max-width: 800px; margin: 0 auto; line-height: 1.6;">
+                        Saya mahasiswa <strong>Teknik Informatika</strong> di <strong>Politeknik Elektronika Negeri Surabaya</strong> 
+                        yang kini menjalani semester akhir dan internship sebagai <strong>Full Stack Developer</strong>. 
+                        Saya memiliki passion yang besar di dunia Web Development dan sedang mempelajari 
+                        logika backend dengan tampilan frontend, sembari terus belajar mengenai arsitektur aplikasi yang lebih kompleks dan efisien.
+                    </p>
+
+                    <div class="location-badge">
+                        <i class="ri-map-pin-2-fill"></i> Surabaya, East Java
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS SECTION -->
         <section id="skills" class="skills">
             <div class="container">
                 <div class="section-header reveal">
@@ -56,31 +83,188 @@
                 </div>
                 
                 <div class="skills-grid">
+                    <!-- Frontend Development -->
                     <div class="skill-card reveal delay-100">
-                        <div class="icon-box"><i class="ri-html5-fill"></i></div>
-                        <h3>HTML & CSS</h3>
-                        <p>Struktur semantik dan desain responsif modern.</p>
+                        <div class="icon-box"><i class="ri-computer-line"></i></div>
+                        <h3>Frontend Development</h3>
+                        <div class="skill-tags">
+                            <span class="tag">NextJS</span>
+                            <span class="tag">React</span>
+                            <span class="tag">TypeScript</span>
+                            <span class="tag">JavaScript</span>
+                        </div>
+                        <p>Membangun antarmuka pengguna yang responsif dan interaktif.</p>
                     </div>
+                    
+                    <!-- Backend Development -->
                     <div class="skill-card reveal delay-200">
-                        <div class="icon-box"><i class="ri-code-s-slash-line"></i></div>
-                        <h3>TypeScript</h3>
-                        <p>Penulisan kode JavaScript yang lebih aman dan terstruktur.</p>
+                        <div class="icon-box"><i class="ri-server-line"></i></div>
+                        <h3>Backend Development</h3>
+                        <div class="skill-tags">
+                            <span class="tag">ExpressJS</span>
+                            <span class="tag">Laravel</span>
+                            <span class="tag">PHP</span>
+                        </div>
+                        <p>Mengembangkan logika server yang aman dan scalable.</p>
                     </div>
+                    
+                    <!-- Database Management -->
                     <div class="skill-card reveal delay-300">
-                        <div class="icon-box"><i class="ri-reactjs-line"></i></div>
-                        <h3>Frontend</h3>
-                        <p>Pengembangan antarmuka interaktif (React/Vue).</p>
+                        <div class="icon-box"><i class="ri-database-2-line"></i></div>
+                        <h3>Database Management</h3>
+                        <div class="skill-tags">
+                            <span class="tag">MySQL</span>
+                            <span class="tag">Eloquent ORM</span>
+                            <span class="tag">Database Design</span>
+                        </div>
+                        <p>Perancangan skema dan optimalisasi penyimpanan data.</p>
+                    </div>
+                    
+                    <!-- Tools & Workflow -->
+                    <div class="skill-card reveal delay-100">
+                        <div class="icon-box"><i class="ri-tools-line"></i></div>
+                        <h3>Tools & Workflow</h3>
+                        <div class="skill-tags">
+                            <span class="tag">Git</span>
+                            <span class="tag">Postman</span>
+                            <span class="tag">Composer</span>
+                            <span class="tag">Linux Basics</span>
+                        </div>
+                        <p>Manajemen versi kode dan kolaborasi tim.</p>
                     </div>
                 </div>
             </div>
         </section>
+
+        <!-- PROJECTS SECTION -->
+        <section id="projects" class="projects-section reveal">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Proyek Terakhir</h2>
+                    <p>Karya yang pernah saya kerjakan.</p>
+                </div>
+                
+                <div class="project-grid">
+                    <!-- Project 1 -->
+                    <div class="project-card">
+                        <div class="project-thumb">
+                            <img src="assets/img/projects/dompetiq.png" alt="DompetIQ Project" onerror="this.parentElement.classList.add('gradient-1'); this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="fallback-icon" style="display:none;"><i class="ri-macbook-line"></i></div>
+                        </div>
+                        <div class="p-content">
+                            <h3>DompetIQ</h3>
+                            <p>Pengembangan frontend untuk menyusun layout dan implementasi desain antarmuka (UI) yang responsif</p>
+                            <a href="javascript:void(0);" class="link-arrow">Lihat Detail <i class="ri-arrow-right-line"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="project-card">
+                        <div class="project-thumb">
+                            <img src="assets/img/projects/kpi-system.png" alt="Sistem Penilaian KPI" onerror="this.parentElement.classList.add('gradient-2'); this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="fallback-icon" style="display:none;"><i class="ri-layout-masonry-line"></i></div>
+                        </div>
+                        <div class="p-content">
+                            <h3>Sistem Penilaian KPI</h3>
+                            <p>Platform evaluasi kinerja karyawan untuk memantau target dan kalkulasi skor KPI secara otomatis.</p>
+                            <a href="javascript:void(0);" class="link-arrow">Lihat Detail <i class="ri-arrow-right-line"></i></a>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 3 -->
+                    <div class="project-card">
+                        <div class="project-thumb">
+                            <img src="assets/img/projects/company-profile.png" alt="Company Web Profile" onerror="this.parentElement.classList.add('gradient-3'); this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="fallback-icon" style="display:none;"><i class="ri-shopping-bag-3-line"></i></div>
+                        </div>
+                        <div class="p-content">
+                            <h3>Company Web Profile</h3>
+                            <p>Website informatif untuk branding perusahaan dengan desain yang modern, bersih, dan responsif di semua perangkat.</p>
+                            <a href="javascript:void(0);" class="link-arrow">Lihat Detail <i class="ri-arrow-right-line"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="contact-section reveal">
+            <div class="container">
+                <div class="contact-card">
+                    <div class="contact-text">
+                        <h2>Contact Me 📬</h2>
+                        <p>Tertarik kolaborasi atau sekadar menyapa? Mungkin bisa dilanjut di sini hehe.</p>
+                    </div>
+                    
+                    <!-- FORMULIR -->
+                    <form id="contactForm" class="full-contact-form" name="contact" method="POST" data-netlify="true">
+                        <input type="hidden" name="form-name" value="contact" />
+                        <div class="form-group">
+                            <input type="text" id="nameInput" name="name" placeholder="Nama Kamu" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="emailInput" name="email" placeholder="Alamat Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="messageInput" name="message" rows="4" placeholder="Tulis pesanmu di sini..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn-send">
+                            Kirim Pesan <i class="ri-send-plane-fill"></i>
+                        </button>
+                        <p id="formMessage" class="form-message"></p>
+                    </form> 
+
+                    <!-- SOCIAL CONNECT -->
+                    <div class="social-connect" id="social">
+                        <p class="social-header">Atau terhubung lebih dekat melalui:</p>
+                        
+                        <div class="social-grid">
+                            <!-- LinkedIn -->
+                            <a href="https://linkedin.com/in/muhammad-thariq-haqkimi" target="_blank" class="social-card">
+                                <div class="social-icon">
+                                    <i class="ri-linkedin-fill"></i>
+                                </div>
+                                <div class="social-text">
+                                    <span class="s-name">LinkedIn</span>
+                                    <span class="s-desc">Jejaring Profesional</span>
+                                </div>
+                            </a>
+
+                            <!-- Instagram -->
+                            <a href="https://instagram.com/mthariiqh" target="_blank" class="social-card">
+                                <div class="social-icon">
+                                    <i class="ri-instagram-line"></i>
+                                </div>
+                                <div class="social-text">
+                                    <span class="s-name">Instagram</span>
+                                    <span class="s-desc">Daily Updates</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+        </section>
+
     </main>
 
     <footer>
         <div class="container">
-            <p>&copy; Muhammad Thariq 2025</p>
+            <p>&copy; 2025 Muhammad Thariq</p>
         </div>
     </footer>
+
+    <!-- SUCCESS POPUP MODAL -->
+    <div id="successPopup" class="popup-overlay">
+        <div class="popup-content">
+            <div class="popup-icon">
+                <i class="ri-check-double-line"></i>
+            </div>
+            <h3>Pesan Terkirim!</h3>
+            <p>Terima kasih sudah menghubungi, pesan anda telah diterima dan akan saya balas secepatnya :)</p>
+            <button id="closePopup" class="btn-close-popup">
+                Tutup <i class="ri-close-line"></i>
+            </button>
+        </div>
+    </div>
 
     <script src="assets/js/main.js"></script>
 </body>
