@@ -89,13 +89,19 @@ header {
     background: white;
     border-radius: 20px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    transition: 0.3s;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.3s ease;
     border: 1px solid rgba(0,0,0,0.05);
+    will-change: transform;
+    transform: translate3d(0, 0, 0);
 }
 
-.project-card:hover, .skill-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+/* Hover hanya untuk desktop */
+@media (hover: hover) and (pointer: fine) {
+    .project-card:hover, .skill-card:hover {
+        transform: translate3d(0, -10px, 0);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    }
 }
 
 /* BADGES */

@@ -228,15 +228,23 @@
     padding: 40px 30px;
     border-radius: var(--radius);
     text-align: center;
-    transition: 0.4s;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+                background 0.3s ease, 
+                border-color 0.3s ease,
+                box-shadow 0.3s ease;
     border: 1px solid transparent;
+    will-change: transform;
+    transform: translate3d(0, 0, 0);
 }
 
-.skill-card:hover {
-    background: white;
-    transform: translateY(-10px);
-    border-color: #E2E8F0;
-    box-shadow: var(--shadow-soft);
+/* Hover hanya untuk desktop (non-touch devices) */
+@media (hover: hover) and (pointer: fine) {
+    .skill-card:hover {
+        background: white;
+        transform: translate3d(0, -10px, 0);
+        border-color: #E2E8F0;
+        box-shadow: var(--shadow-soft);
+    }
 }
 
 .icon-box {
@@ -271,12 +279,19 @@
     border-radius: 20px;
     font-size: 0.8rem;
     font-weight: 500;
-    transition: all 0.3s ease;
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), 
+                background 0.2s ease, 
+                color 0.2s ease,
+                border-color 0.2s ease;
+    transform: translate3d(0, 0, 0);
 }
 
-.skill-card:hover .tag {
-    background: var(--primary);
-    color: white;
-    border-color: var(--primary);
-    transform: translateY(-2px);
+/* Hover hanya untuk desktop */
+@media (hover: hover) and (pointer: fine) {
+    .skill-card:hover .tag {
+        background: var(--primary);
+        color: white;
+        border-color: var(--primary);
+        transform: translate3d(0, -2px, 0);
+    }
 }
