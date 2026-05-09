@@ -42,7 +42,7 @@
 
 /* FOOTER */
 footer {
-    background: var(--text-main);
+    background: var(--footer-bg);
     color: white;
     text-align: center;
     padding: 30px 0;
