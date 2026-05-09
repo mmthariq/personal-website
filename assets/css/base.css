@@ -3,15 +3,87 @@
    ========================================= */
 
 :root {
+    color-scheme: light;
     --primary: #3B82F6;
     --primary-dark: #1D4ED8;
     --accent: #60A5FA;
     --bg-body: #F0F9FF;
-    --bg-white: #ffffff;
+    --bg-white: #FFFFFF;
+    --bg-surface: #FFFFFF;
+    --bg-card: #FFFFFF;
+    --bg-elevated: #FFFFFF;
+    --bg-navbar: rgba(255, 255, 255, 0.7);
+    --bg-navbar-mobile: rgba(255, 255, 255, 0.95);
     --text-main: #1E293B;
     --text-light: #64748B;
     --shadow-soft: 0 10px 40px -10px rgba(59, 130, 246, 0.15);
     --radius: 16px;
+    --border-soft: rgba(15, 23, 42, 0.08);
+    --border-strong: rgba(15, 23, 42, 0.15);
+    --card-border: rgba(15, 23, 42, 0.06);
+    --badge-bg: #DBEAFE;
+    --badge-text: #1D4ED8;
+    --badge-soft-bg: #EFF6FF;
+    --icon-bg: #FFFFFF;
+    --input-bg: rgba(255, 255, 255, 0.95);
+    --input-focus-bg: #FFFFFF;
+    --input-focus-ring: rgba(59, 130, 246, 0.25);
+    --popup-bg: #FFFFFF;
+    --toggle-bg-off: #E2E8F0;
+    --toggle-bg-on: #0F172A;
+    --toggle-thumb: #FFFFFF;
+    --toggle-icon: #64748B;
+    --button-solid: #0F172A;
+    --button-solid-hover: #000000;
+    --contact-button-bg: #3B82F6;
+    --contact-button-hover: #1D4ED8;
+    --contact-grad-start: #1D4ED8;
+    --contact-grad-end: #2563EB;
+    --contact-shadow: 0 20px 40px rgba(37, 99, 235, 0.3);
+    --footer-bg: var(--primary-dark);
+    --tag-bg: rgba(59, 130, 246, 0.1);
+    --tag-border: rgba(59, 130, 246, 0.2);
+    --tag-text: var(--primary);
+}
+
+:root[data-theme="dark"] {
+    color-scheme: dark;
+    --bg-body: #0B1120;
+    --bg-white: #111827;
+    --bg-surface: #0F172A;
+    --bg-card: #111827;
+    --bg-elevated: #1F2937;
+    --bg-navbar: rgba(15, 23, 42, 0.85);
+    --bg-navbar-mobile: rgba(15, 23, 42, 0.95);
+    --text-main: #E2E8F0;
+    --text-light: #94A3B8;
+    --shadow-soft: 0 10px 40px -10px rgba(2, 6, 23, 0.6);
+    --border-soft: rgba(148, 163, 184, 0.2);
+    --border-strong: rgba(148, 163, 184, 0.35);
+    --card-border: rgba(148, 163, 184, 0.15);
+    --badge-bg: rgba(59, 130, 246, 0.2);
+    --badge-text: #BFDBFE;
+    --badge-soft-bg: rgba(59, 130, 246, 0.15);
+    --icon-bg: #0F172A;
+    --input-bg: rgba(15, 23, 42, 0.75);
+    --input-focus-bg: rgba(15, 23, 42, 0.9);
+    --input-focus-ring: rgba(148, 163, 184, 0.25);
+    --popup-bg: #0F172A;
+    --toggle-bg-off: #E2E8F0;
+    --toggle-bg-on: #1E293B;
+    --toggle-thumb: #E2E8F0;
+    --toggle-icon: #94A3B8;
+    --button-solid: #0B1220;
+    --button-solid-hover: #111827;
+    --contact-button-bg: #1F2937;
+    --contact-button-hover: #374151;
+    --contact-grad-start: #1F2937;
+    --contact-grad-end: #111827;
+    --contact-shadow: 0 25px 50px rgba(2, 6, 23, 0.55);
+    --footer-bg: #111827;
+    --tag-bg: rgba(59, 130, 246, 0.2);
+    --tag-border: rgba(59, 130, 246, 0.3);
+    --tag-text: #BFDBFE;
 }
 
 * {
@@ -33,6 +105,7 @@ body {
     overflow-x: hidden;
     width: 100%;
     max-width: 100vw;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 a { 

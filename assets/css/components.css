@@ -8,9 +8,9 @@ header {
     top: 0;
     width: 100%;
     z-index: 100;
-    background: rgba(255, 255, 255, 0.7);
+    background: var(--bg-navbar);
     backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    border-bottom: 1px solid var(--border-soft);
 }
 
 .nav-container {
@@ -84,14 +84,93 @@ header {
     color: var(--primary);
 }
 
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.theme-toggle {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+
+.theme-toggle input {
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+}
+
+.toggle-track {
+    width: 56px;
+    height: 30px;
+    border-radius: 999px;
+    background: var(--toggle-bg-off);
+    border: 1px solid var(--border-soft);
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8px;
+    transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.toggle-thumb {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: var(--toggle-thumb);
+    border: 1px solid var(--border-soft);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.18);
+    transition: transform 0.3s ease;
+}
+
+.toggle-icon {
+    font-size: 0.9rem;
+    color: var(--toggle-icon);
+    z-index: 1;
+    transition: color 0.3s ease, opacity 0.3s ease;
+}
+
+.toggle-icon.moon {
+    opacity: 0.6;
+}
+
+.theme-toggle input:checked + .toggle-track {
+    background: var(--toggle-bg-on);
+}
+
+.theme-toggle input:checked + .toggle-track .toggle-thumb {
+    transform: translateX(26px);
+}
+
+.theme-toggle input:checked + .toggle-track .sun {
+    opacity: 0.4;
+}
+
+.theme-toggle input:checked + .toggle-track .moon {
+    opacity: 1;
+}
+
+.theme-toggle input:focus-visible + .toggle-track {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
 /* CARDS */
 .project-card, .skill-card {
-    background: white;
+    background: var(--bg-card);
     border-radius: 20px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
                 box-shadow 0.3s ease;
-    border: 1px solid rgba(0,0,0,0.05);
+    border: 1px solid var(--card-border);
     will-change: transform;
     transform: translate3d(0, 0, 0);
 }
@@ -108,8 +187,8 @@ header {
 .badge {
     display: inline-block;
     padding: 6px 16px;
-    background: #DBEAFE;
-    color: var(--primary-dark);
+    background: var(--badge-bg);
+    color: var(--badge-text);
     font-size: 0.95rem;
     font-weight: 600;
     border-radius: 30px;
@@ -120,7 +199,7 @@ header {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: #EFF6FF;
+    background: var(--badge-soft-bg);
     color: var(--primary);
     padding: 8px 16px;
     border-radius: 50px;

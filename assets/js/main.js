@@ -15,7 +15,145 @@ const CONFIG = {
 };
 
 // ==========================================
-// 1. SCROLL REVEAL ANIMATION
+// 1. THEME TOGGLE
+// ==========================================
+class ThemeManager {
+    constructor() {
+        this.toggle = document.getElementById('themeToggle');
+        this.root = document.documentElement;
+        this.storageKey = 'theme-preference';
+        this.mediaQuery = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+        this.init();
+    }
+
+    getStoredTheme() {
+        try {
+            return localStorage.getItem(this.storageKey);
+        } catch (error) {
+            return null;
+        }
+    }
+
+    setStoredTheme(theme) {
+        try {
+            localStorage.setItem(this.storageKey, theme);
+        } catch (error) {
+            return;
+        }
+    }
+
+    getPreferredTheme() {
+        const storedTheme = this.getStoredTheme();
+        if (storedTheme) return storedTheme;
+        return this.mediaQuery && this.mediaQuery.matches ? 'dark' : 'light';
+    }
+
+    applyTheme(theme) {
+        this.root.setAttribute('data-theme', theme);
+    }
+
+    syncToggle(theme) {
+        if (this.toggle) {
+            this.toggle.checked = theme === 'dark';
+        }
+    }
+
+    init() {
+        const initialTheme = this.getPreferredTheme();
+        this.applyTheme(initialTheme);
+
+        if (!this.toggle) return;
+
+        this.syncToggle(initialTheme);
+
+        this.toggle.addEventListener('change', () => {
+            const nextTheme = this.toggle.checked ? 'dark' : 'light';
+            this.applyTheme(nextTheme);
+            this.setStoredTheme(nextTheme);
+        });
+
+        if (!this.getStoredTheme() && this.mediaQuery) {
+            this.mediaQuery.addEventListener('change', (event) => {
+                const nextTheme = event.matches ? 'dark' : 'light';
+                this.applyTheme(nextTheme);
+                this.syncToggle(nextTheme);
+            });
+        }
+    }
+}
+
+// ==========================================
+// 2. MOBILE NAVIGATION
+// ==========================================
+class MobileNavManager {
+    constructor() {
+        this.menuToggle = document.querySelector('.menu-toggle');
+        this.navLinks = document.querySelector('.nav-links');
+        this.navItems = document.querySelectorAll('.nav-links a');
+        this.icon = this.menuToggle ? this.menuToggle.querySelector('i') : null;
+        this.isOpen = false;
+        this.init();
+    }
+
+    open() {
+        if (!this.navLinks || !this.menuToggle) return;
+        this.isOpen = true;
+        this.navLinks.classList.add('nav-active');
+        this.menuToggle.setAttribute('aria-expanded', 'true');
+        this.updateIcon();
+    }
+
+    close() {
+        if (!this.navLinks || !this.menuToggle) return;
+        this.isOpen = false;
+        this.navLinks.classList.remove('nav-active');
+        this.menuToggle.setAttribute('aria-expanded', 'false');
+        this.updateIcon();
+    }
+
+    toggle() {
+        if (this.isOpen) {
+            this.close();
+        } else {
+            this.open();
+        }
+    }
+
+    updateIcon() {
+        if (!this.icon) return;
+        this.icon.className = this.isOpen ? 'ri-close-line' : 'ri-menu-3-line';
+    }
+
+    init() {
+        if (!this.menuToggle || !this.navLinks) return;
+
+        this.menuToggle.setAttribute('role', 'button');
+        this.menuToggle.setAttribute('tabindex', '0');
+        this.menuToggle.setAttribute('aria-label', 'Toggle navigation');
+        this.menuToggle.setAttribute('aria-expanded', 'false');
+
+        this.menuToggle.addEventListener('click', () => this.toggle());
+        this.menuToggle.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                this.toggle();
+            }
+        });
+
+        this.navItems.forEach(link => {
+            link.addEventListener('click', () => this.close());
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                this.close();
+            }
+        });
+    }
+}
+
+// ==========================================
+// 3. SCROLL REVEAL ANIMATION
 // ==========================================
 class ScrollRevealManager {
     constructor() {
@@ -42,7 +180,7 @@ class ScrollRevealManager {
 }
 
 // ==========================================
-// 2. TYPEWRITER EFFECT
+// 4. TYPEWRITER EFFECT
 // ==========================================
 class TypeWriter {
     constructor(element, config) {
@@ -103,7 +241,7 @@ class TypeWriter {
 }
 
 // ==========================================
-// 3. SUCCESS POPUP MANAGER
+// 5. SUCCESS POPUP MANAGER
 // ==========================================
 class SuccessPopupManager {
     constructor() {
@@ -145,7 +283,7 @@ class SuccessPopupManager {
 }
 
 // ==========================================
-// 4. CONTACT FORM HANDLER
+// 6. CONTACT FORM HANDLER
 // ==========================================
 class ContactFormManager {
     constructor(successPopup) {
@@ -271,10 +409,12 @@ class ContactFormManager {
 }
 
 // ==========================================
-// 5. MAIN APPLICATION
+// 7. MAIN APPLICATION
 // ==========================================
 class App {
     constructor() {
+        this.themeManager = new ThemeManager();
+        this.mobileNav = new MobileNavManager();
         this.scrollReveal = new ScrollRevealManager();
         this.successPopup = new SuccessPopupManager();
         this.contactForm = new ContactFormManager(this.successPopup);
@@ -290,7 +430,7 @@ class App {
 }
 
 // ==========================================
-// 6. INITIALIZATION
+// 8. INITIALIZATION
 // ==========================================
 document.addEventListener('DOMContentLoaded', () => {
     new App();
